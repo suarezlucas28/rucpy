@@ -19,4 +19,4 @@ PostgreSQL
 
 3- Run python manage.py runserver for test./ Correr python manage.py runserver para testear.
 
-4- Use url: http://127.0.0.1:8000/rucs/ruc/1000060, replace "1000060" for own ci./ Usar url: http://127.0.0.1:8000/rucs/ruc/1000060, reemplace "1000060" por tu propia ci.
+4- Use url: http://127.0.0.1:8000/rucs/ruc/1000060, replace "1000060" for own ruc./ Usar url: http://127.0.0.1:8000/rucs/ruc/1000060, reemplace "1000060" por tu propia ruc.
