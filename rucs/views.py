@@ -13,13 +13,16 @@ class JSONResponse(HttpResponse):
         
 @csrf_exempt
 def ruc_detail(request, ci):
-    try:
-        ruc_object = Ruc.objects.get(ci=ci)
-    except Ruc.DoesNotExist:
+    
+    print ci
+    
+    ruc_object = Ruc.objects.filter(ci=ci)
+    
+    if len(ruc_object)>0:
+        ruc_object = ruc_object[0]
+    else:
         ruc_object = Ruc()
-        serializer = RucSerializer(ruc_object)
-        return JSONResponse(serializer.data)
-
+    
     if request.method == 'GET':
         serializer = RucSerializer(ruc_object)
         return JSONResponse(serializer.data)
