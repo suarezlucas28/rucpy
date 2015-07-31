@@ -13,16 +13,13 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 STATICFILES_DIRS = [os.path.join(os.path.join(BASE_DIR, 'static'))]
 STATIC_ROOT = os.path.join(os.path.join(BASE_DIR, 'staticfiles'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'a9vgq(*4s4g@)o7c5vj7vg3fon403^jza12!mr&=o)fyamaf$5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -74,17 +71,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rucpy.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = { 'default': 
-    {'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'ruc', 
-    'USER': 'postgres', 
-    'PASSWORD': 'postgres', 
-    'HOST': '127.0.0.1' } 
-} 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
